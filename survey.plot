@@ -3,6 +3,12 @@
 # rtl_power output format
 # 2013-08-19, 20:53:16, 55000000, 57000000, 1000000, 4096, -29.60, -29.60,
 
+# An hour is 3600 seconds
+hour = 3600
+
+# The time on the PI is set to UTC+1 and we're UTC+8
+utc_offset = 7
+
 set timefmt '%Y-%m-%d, %H:%M:%S'
 set view map
 
@@ -30,4 +36,4 @@ set format y "%.1s %cHz"
 set cbrange [-25:25]
 unset colorbox
 
-plot '%NAME%.csv' using (timecolumn(1)+7*3600):3:7 with points ps 0.1 pt 5 palette
+plot '%NAME%.csv' using (timecolumn(1)+utc_offset*hour):3:7 with points ps 0.1 pt 5 palette
