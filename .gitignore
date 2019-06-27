@@ -1,0 +1,7 @@
+*
+!.gitignore
+!*.plot
+!*.plt
+!*.sh
+!*.md
+!LICENSE
