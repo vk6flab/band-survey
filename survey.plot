@@ -9,6 +9,9 @@ hour = 3600
 # The time on the PI is set to UTC+1 and we're UTC+8
 utc_offset = 7
 
+# MHz is 1000000 Hz
+mhz = 1000000
+
 set timefmt '%Y-%m-%d, %H:%M:%S'
 set view map
 
@@ -23,13 +26,13 @@ set title "Band survey: 0 - 1766 MHz"
 
 set xlabel 'Time'
 # Label every 3 Hours
-set xtics 3 * 3600
+set xtics 3 * hour
 set xdata time
 set format x "%H:%M\n%d/%m"
 
 set ylabel 'Frequency (Hz)'
 # Label every 100 MHz
-set ytics 100 * 1000000
+set ytics 100 * mhz
 set format y "%.1s %cHz"
 
 # Set the range from -25dB to 25dB
